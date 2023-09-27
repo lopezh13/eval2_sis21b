@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 void main() {
-  runApp(const MyApp());
+ WidgetsFlutterBinding.ensureInitialized();
+ Firebase.initializeApp().then((_){
+ runApp(const MyApp());
+ });
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'EXAMEN II'),
     );
   }
 }
